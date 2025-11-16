@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: championship-service
+spec:
+  template:
+    spec:
+      containers:
+        - image: us-central1-docker.pkg.dev/daniel-dev-478400/championship-service/championship-service:latest
+          env:
+          ports:
+            - containerPort: 4000
